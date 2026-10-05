@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Authorization</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header><a class="brand" href="./">Made From Nothing</a></header>
+  <h1>Authorization complete</h1>
+  <p class="lead">You can close this tab and return to the Made From Nothing app.</p>
+  <p id="code" style="word-break:break-all;color:var(--muted)"></p>
+  <script>
+    var p = new URLSearchParams(location.search);
+    if (p.get("code")) document.getElementById("code").textContent = "Code: " + p.get("code");
+    if (p.get("error")) document.getElementById("code").textContent = "Error: " + p.get("error");
+  </script>
+</main>
+</body>
+</html>
